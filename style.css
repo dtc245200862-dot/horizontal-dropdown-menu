@@ -1,0 +1,126 @@
+/* ========================================================
+   [Thực hành] Tạo menu ngang (Horizontal Dropdown Menu)
+   Tác giả: Hồ Quang Huy (DTC245200862)
+   ======================================================== */
+
+/* 1. Thiết lập font chữ và reset căn lề để tránh khác biệt giữa các trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    padding: 40px;
+    color: #333;
+}
+
+.demo-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.demo-title {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dc3545;
+}
+
+.demo-title h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.demo-title p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* 2. Đặt phân vùng cho trình đơn: chiều cao, khoảng cách và màu nền */
+#menu {
+    height: 50px;
+    background-color: #000000;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Định nghĩa bộ chọn riêng cho các phần tử trong danh sách (li):
+      float: left để các mục xếp thành hàng ngang,
+      position: relative để làm gốc tọa độ cho menu con */
+#menu ul li {
+    float: left;
+    position: relative;
+    list-style: none;
+}
+
+/* 4. Định nghĩa bộ chọn cho các liên kết (a):
+      Cố định độ rộng, chiều cao, căn giữa, màu chữ trắng và bỏ gạch chân */
+#menu ul li a {
+    display: block;
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.25s ease;
+}
+
+/* 5. Bộ chọn khi di chuột qua liên kết: Chuyển màu nền sang màu ĐỎ */
+#menu ul li a:hover,
+#menu ul li:hover > a {
+    background-color: red;
+}
+
+/* 6. Định nghĩa bộ chọn cho các danh sách con (trình đơn con):
+      position: absolute để cố định vị trí ngay dưới mục cha (top: 50px, left: 0),
+      visibility: hidden để ẩn mặc định */
+#menu ul ul {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 100;
+}
+
+/* Các mục con trong menu dropdown xếp theo chiều dọc (ngắt float) */
+#menu ul ul li {
+    float: none;
+    border-top: 1px solid #222222;
+}
+
+/* 7. Hiển thị trình đơn con khi đưa con trỏ chuột qua mục chọn của trình đơn cha */
+#menu ul li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Gợi ý tương tác phía dưới */
+.hint-box {
+    margin-top: 250px;
+    padding: 16px 20px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: #856404;
+}

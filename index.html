@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Tạo menu ngang - CodeGym</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="demo-container">
+        <div class="demo-title">
+            <h1>Trình Đơn Hàng Ngang Thả Xuống (Horizontal Dropdown Menu)</h1>
+            <p>Thực hành tạo menu ngang với CSS: <code>float: left</code>, <code>position: relative</code>, <code>position: absolute</code>, <code>visibility: hidden</code> và <code>li:hover</code> chuyển nền sang màu đỏ.</p>
+        </div>
+
+        <!-- Vùng Menu chính có id="menu" theo hướng dẫn -->
+        <div id="menu">
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li>
+                    <a href="#courses">Khóa học &#9662;</a>
+                    <!-- Menu con cấp 2 thả xuống -->
+                    <ul>
+                        <li><a href="#java">Lập trình Java</a></li>
+                        <li><a href="#web">Lập trình Web</a></li>
+                        <li><a href="#python">Lập trình Python</a></li>
+                        <li><a href="#database">Cơ sở dữ liệu</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#services">Dịch vụ &#9662;</a>
+                    <!-- Menu con cấp 2 thả xuống -->
+                    <ul>
+                        <li><a href="#training">Đào tạo Doanh nghiệp</a></li>
+                        <li><a href="#career">Career Coaching</a></li>
+                        <li><a href="#hiring">Tuyển dụng IT</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#documents">Tài liệu &#9662;</a>
+                    <!-- Menu con cấp 2 thả xuống -->
+                    <ul>
+                        <li><a href="#ebook">Ebook miễn phí</a></li>
+                        <li><a href="#video">Video bài giảng</a></li>
+                        <li><a href="#code">Mã nguồn mẫu</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <div class="hint-box">
+            💡 <strong>Hướng dẫn kiểm tra:</strong> Rê chuột vào các mục <em>"Khóa học"</em>, <em>"Dịch vụ"</em> hoặc <em>"Tài liệu"</em> trên thanh menu ngang để thấy menu con thả xuống phía dưới và màu nền chuyển sang <strong>màu Đỏ</strong> khi di chuột qua!
+        </div>
+    </div>
+
+</body>
+</html>
